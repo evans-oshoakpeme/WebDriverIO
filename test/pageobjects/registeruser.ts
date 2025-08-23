@@ -121,15 +121,11 @@ class RegisterUser {
     return $('//a[text()=" Logged in as "]');
   }
 
-  get deleteAccountButton () {
-    return $('//a[@href="/delete_account"]');
+  get logoutButton () {
+    return $('//a[@href="/logout"]');
   }
 
-  get accountDeletedMessage () {
-    return $('//h2[@data-qa="account-deleted"]');
-  }
-
-  async firstTest() {
+  async testCase1() {
     await browser.url("https://automationexercise.com"); // Navigate to the homepage
     await expect(this.sliderSection).toBeExisting(); // Verify the slider section exists
     await this.signUpMenu.click(); // Click on the sign-up menu
@@ -170,14 +166,8 @@ class RegisterUser {
     await expect(this.loggedInAsMessage).toHaveText(
       "Logged in as Adam Smith"
     ); // Verify the text of the logged in message
-    await this.deleteAccountButton.click(); // Click the delete account button
-    await expect(this.accountDeletedMessage).toBeExisting(); // Verify the account deleted message exists
-    await expect(this.accountDeletedMessage).toHaveText(
-      "ACCOUNT DELETED!"
-    ); // Verify the text of the account deleted message
-    await this.continueButton.click(); // Click the continue after delete button
-    await expect(this.sliderSection).toBeExisting(); // Verify the slider section exists after deletion
-  
+    await this.logoutButton.click(); // Click the logout button
+    await expect(browser).toHaveUrl('https://automationexercise.com/login'); // Verify the URL after logout
   }
 }
 
