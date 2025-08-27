@@ -125,7 +125,7 @@ class RegisterUser {
     return $('//a[@href="/logout"]');
   }
 
-  async testCase1() {
+  async registerLogout() {
     await browser.url("https://automationexercise.com"); // Navigate to the homepage
     await expect(this.sliderSection).toBeExisting(); // Verify the slider section exists
     await this.signUpMenu.click(); // Click on the sign-up menu

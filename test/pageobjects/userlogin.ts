@@ -39,7 +39,7 @@ class UserLogin {
     return $('//a[@data-qa="continue-button"]');
   }
 
-  async testCase2() {
+  async loginDelete() {
     /*await browser.url("https://automationexercise.com"); // Navigate to the homepage
     await expect(this.sliderSection).toBeExisting(); // Verify the slider section exists
     await this.signUpMenu.click(); // Click on the sign-up menu*/
