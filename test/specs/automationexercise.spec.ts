@@ -2,6 +2,7 @@ import RegisterUser from "../pageobjects/registeruser.ts";
 import UserLogin from "../pageobjects/userlogin.ts";
 import InvalidLogin from "../pageobjects/invalidlogin.ts";
 import ExistingEmail from "../pageobjects/invalidsignup.ts";
+import ContactUs from "../pageobjects/contactus.ts";
 
 // This file contains the test cases for the Automation Exercise website
 
@@ -11,5 +12,6 @@ describe("Automation Exercise", () => {
     await ExistingEmail.invalidSignUp(); // Call the invalid sign-up test case method from ExistingEmail class
     await InvalidLogin.invalidLogin(); // Call the invalid login test case method from InvalidLogin class
     await UserLogin.loginDelete(); // Call the login and delete account test case method from UserLogin class
+    await ContactUs.contactUsForm(); // Call the contact us form test case method from ContactUs class
   });
 });
